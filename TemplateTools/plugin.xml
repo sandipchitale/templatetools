@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="promptProviders" name="Prompt provider" schema="schema/templatetools.exsd"/>
+   <extension
+         id="templatetools.templates"
+         name="Addtional template"
+         point="org.eclipse.ui.editors.templates">
+      <resolver
+            class="templatetools.ClipboardVariableResolver"
+            contextTypeId="java"
+            description="Resolves to the content of the clipboard."
+            icon="icons/clipboard.gif"
+            name="clipboard content"
+            type="clipboard">
+      </resolver>
+      <resolver
+            class="templatetools.PromptVariableResolver"
+            contextTypeId="java"
+            description="Resolves to the value entered by the user."
+            icon="icons/clipboard.gif"
+            name="user input"
+            type="prompt">
+      </resolver>
+   </extension>
+   <extension
+         point="TemplateTools.promptProviders">
+      <promptProvider
+            class="templatetools.InputPrompt"
+            type="input">
+      </promptProvider>
+      <promptProvider
+            class="templatetools.FilePrompt"
+            type="file">
+      </promptProvider>
+      <promptProvider
+            class="templatetools.EnumerationPrompt"
+            type="enumeration">
+      </promptProvider>
+      <promptProvider
+            class="templatetools.DirectoryPrompt"
+            type="directory">
+      </promptProvider>
+            <promptProvider
+            class="templatetools.ColorPrompt"
+            type="color">
+      </promptProvider>
+            <promptProvider
+                  class="templatetools.FontPrompt"
+                  type="font">
+            </promptProvider>
+   </extension>
+</plugin>
