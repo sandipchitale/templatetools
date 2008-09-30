@@ -8,11 +8,9 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.text.templates.TemplateContext;
 import org.eclipse.jface.text.templates.TemplateVariable;
 import org.eclipse.jface.text.templates.TemplateVariableResolver;
-import org.eclipse.ui.PlatformUI;
 
 public class PromptVariableResolver extends TemplateVariableResolver {
 	private String value = null;
@@ -25,7 +23,7 @@ public class PromptVariableResolver extends TemplateVariableResolver {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void resolve(TemplateVariable variable, TemplateContext context) {
+	public void resolve(TemplateVariable variable, TemplateContext context) {		
 		// Initialize the name
 		String name = variable.getName();
 		if (name == null) {
@@ -54,8 +52,8 @@ public class PromptVariableResolver extends TemplateVariableResolver {
 									.createExecutableExtension(CLASS_ATTRIBUTE);
 							if (client instanceof IPrompt) {
 								value = ((IPrompt) client).getValue(name,
-										(params.size() > 1 ? params.subList(1,
-												params.size())
+										(params.size() > 1 ? 
+												params.subList(1, params.size())
 												: Collections.EMPTY_LIST));
 								break;
 							}
@@ -69,19 +67,9 @@ public class PromptVariableResolver extends TemplateVariableResolver {
 				}
 			}
 		} else {
-			value = getInputLine(name);
+			value = new InputPrompt().getValue(name, Collections.EMPTY_LIST);
 		}
 		super.resolve(variable, context);
-	}
-
-	private String getInputLine(String name) {
-		InputDialog inputDialog = new InputDialog(PlatformUI.getWorkbench()
-				.getActiveWorkbenchWindow().getShell(), "Enter value",
-				"Enter value for '" + name + "' : ", name, null);
-		if (inputDialog.open() == InputDialog.OK) {
-			return inputDialog.getValue();
-		}
-		return null;
 	}
 
 	protected String resolve(TemplateContext context) {
