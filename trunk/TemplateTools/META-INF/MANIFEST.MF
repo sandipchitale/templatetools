@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Template Tools Plug-in
 Bundle-SymbolicName: TemplateTools;singleton:=true
-Bundle-Version: 1.0.2
+Bundle-Version: 1.0.3
 Bundle-Activator: templatetools.Activator
 Bundle-Vendor: Sandip V. Chitale
 Require-Bundle: org.eclipse.ui,
