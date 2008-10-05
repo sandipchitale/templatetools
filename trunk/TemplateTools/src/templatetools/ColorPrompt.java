@@ -7,6 +7,8 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.ColorDialog;
 import org.eclipse.ui.PlatformUI;
 
+import templatetools.api.IPrompt;
+
 public class ColorPrompt implements IPrompt {
 
 	@SuppressWarnings("unchecked")

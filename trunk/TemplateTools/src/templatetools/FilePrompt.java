@@ -5,6 +5,8 @@ import java.util.List;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.ui.PlatformUI;
 
+import templatetools.api.IPrompt;
+
 public class FilePrompt implements IPrompt {
 
 	@SuppressWarnings("unchecked")

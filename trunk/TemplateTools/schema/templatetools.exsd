@@ -62,7 +62,7 @@
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":templatetools.IPrompt"/>
+                  <meta.attribute kind="java" basedOn=":templatetools.api.IPrompt"/>
                </appinfo>
             </annotation>
          </attribute>

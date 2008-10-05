@@ -7,6 +7,8 @@ import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
+import templatetools.api.IPrompt;
+
 public class EnumerationPrompt implements IPrompt {
 
 	@SuppressWarnings("unchecked")
