@@ -5,6 +5,8 @@ import java.util.List;
 import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.ui.PlatformUI;
 
+import templatetools.api.IPrompt;
+
 public class InputPrompt implements IPrompt {
 
 	@SuppressWarnings("unchecked")

@@ -12,6 +12,8 @@ import org.eclipse.jface.text.templates.TemplateContext;
 import org.eclipse.jface.text.templates.TemplateVariable;
 import org.eclipse.jface.text.templates.TemplateVariableResolver;
 
+import templatetools.api.IPrompt;
+
 public class PromptVariableResolver extends TemplateVariableResolver {
 	private String value = null;
 
@@ -23,7 +25,7 @@ public class PromptVariableResolver extends TemplateVariableResolver {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void resolve(TemplateVariable variable, TemplateContext context) {		
+	public void resolve(TemplateVariable variable, TemplateContext context) {
 		// Initialize the name
 		String name = variable.getName();
 		if (name == null) {
@@ -52,8 +54,8 @@ public class PromptVariableResolver extends TemplateVariableResolver {
 									.createExecutableExtension(CLASS_ATTRIBUTE);
 							if (client instanceof IPrompt) {
 								value = ((IPrompt) client).getValue(name,
-										(params.size() > 1 ? 
-												params.subList(1, params.size())
+										(params.size() > 1 ? params.subList(1,
+												params.size())
 												: Collections.EMPTY_LIST));
 								break;
 							}

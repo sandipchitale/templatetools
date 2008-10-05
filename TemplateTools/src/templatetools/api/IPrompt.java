@@ -1,4 +1,4 @@
-package templatetools;
+package templatetools.api;
 
 import java.util.List;
 

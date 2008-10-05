@@ -6,6 +6,8 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.widgets.FontDialog;
 import org.eclipse.ui.PlatformUI;
 
+import templatetools.api.IPrompt;
+
 public class FontPrompt implements IPrompt {
 
 	@SuppressWarnings("unchecked")
